@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Match Game | EJ Creative Playground</title>
+
+  <link rel="icon" type="image/svg+xml" href="./image/EJ_favicon.svg">
+
+  <link rel="stylesheet" href="./css/games-common.css">
+  <link rel="stylesheet" href="./css/color-match.css">
+</head>
+<body class="game-page">
+
+  <header class="game-header">
+    <div class="game-container game-header-inner">
+      <a class="game-logo" href="./index.html">
+        <strong>EJ<span>.</span></strong>
+        <span class="game-logo-sub">Creative Playground</span>
+      </a>
+      <a class="game-home-link" href="./index.html">← Home</a>
+    </div>
+  </header>
+
+  <main class="game-main">
+    <div class="game-container">
+
+      <section class="game-intro">
+        <span class="section-label">WEB GAME</span>
+        <h1>Color Match Game</h1>
+        <p class="game-desc">제한 시간 안에 목표 색상과 같은 색을 찾는 스피드 게임입니다.</p>
+        <p class="game-tech">사용 기술: HTML · CSS · JavaScript</p>
+      </section>
+
+      <section class="game-stage" aria-label="Color Match Game 실행 영역">
+        <div class="game-stats">
+          <div>Score: <span id="score">0</span></div>
+          <div>Time: <span id="timeLeft">30</span>s</div>
+          <div>Combo: <span id="combo">0</span></div>
+          <div>Best: <span id="best">0</span></div>
+        </div>
+
+        <div class="color-target">
+          <div class="color-target-box" id="targetBox"></div>
+          <p class="color-target-name" id="targetName">시작을 눌러주세요</p>
+          <p class="color-target-hint">이 색상과 같은 버튼을 클릭하세요</p>
+        </div>
+
+        <div class="color-options" id="colorOptions"></div>
+
+        <div class="game-controls">
+          <button type="button" id="startBtn" class="game-btn" aria-label="게임 시작">Start</button>
+          <button type="button" id="restartBtn" class="game-btn game-btn-outline" aria-label="게임 다시 시작" hidden>Restart</button>
+          <a href="./index.html#works" class="game-btn game-btn-outline">Back to Projects</a>
+        </div>
+
+        <div class="game-result" id="gameResult" hidden>
+          <p id="resultText"></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="game-footer">
+    <div class="game-container">
+      <p>제한 시간 30초 동안 목표 색상과 같은 버튼을 최대한 많이 맞히는 게임입니다.</p>
+      <p class="game-footer-tech">사용 기술: HTML · CSS · JavaScript</p>
+      <a href="./index.html#works" class="game-footer-link">← 메인 프로젝트 목록으로 돌아가기</a>
+      <small>© 2026 EJ Portfolio. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="./js/color-match.js"></script>
+</body>
+</html>

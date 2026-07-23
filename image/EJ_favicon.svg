@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 856.25 856.25">
+  <!-- Generator: Adobe Illustrator 30.6.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 109)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #826cef;
+        opacity: .47;
+      }
+
+      .st0, .st1, .st2, .st3, .st4, .st5 {
+        isolation: isolate;
+      }
+
+      .st1 {
+        fill: url(#linear-gradient);
+        opacity: .33;
+      }
+
+      .st6 {
+        fill: url(#linear-gradient1);
+        stroke: url(#linear-gradient2);
+      }
+
+      .st6, .st2 {
+        stroke-miterlimit: 10;
+        stroke-width: .25px;
+      }
+
+      .st2 {
+        fill: url(#linear-gradient3);
+        opacity: .78;
+        stroke: url(#linear-gradient4);
+      }
+
+      .st7, .st3, .st5 {
+        fill: #fff;
+      }
+
+      .st3 {
+        font-size: 250px;
+      }
+
+      .st3, .st5 {
+        font-family: Georgia, Georgia;
+      }
+
+      .st5 {
+        font-size: 235px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="72.79" y1="159.84" x2="812.79" y2="969.84" gradientTransform="translate(0 -120.66)" gradientUnits="userSpaceOnUse">
+      <stop offset=".35" stop-color="#653dc6"/>
+      <stop offset=".72" stop-color="#4320aa"/>
+      <stop offset="1" stop-color="#241076"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="93.28" y1="184.25" x2="790.62" y2="947.56" gradientTransform="translate(0 -120.66)" gradientUnits="userSpaceOnUse">
+      <stop offset=".35" stop-color="#653dc6"/>
+      <stop offset=".72" stop-color="#4320aa"/>
+      <stop offset="1" stop-color="#241076"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="21.78" y1="1738.79" x2="834.48" y2="1738.79" gradientTransform="translate(0 2168.91) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".58" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient3" x1="133.39" y1="221.79" x2="818.39" y2="981.79" gradientTransform="translate(0 -120.66)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
+      <stop offset=".28" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#1f0d1c" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient4" x1="0" y1="1740.79" x2="856.25" y2="1740.79" gradientTransform="translate(0 2168.91) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".44" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <rect id="main_purple_button" class="st1" x=".12" y=".12" width="856" height="856" rx="172" ry="172"/>
+  <rect id="main_purple_button1" class="st6" x="21.9" y="23.9" width="812.45" height="812.45" rx="172" ry="172"/>
+  <rect id="main_purple_button2" class="st0" x=".13" y=".13" width="856" height="856" rx="172" ry="172"/>
+  <rect id="edge_depth_overlay" class="st2" x=".12" y=".12" width="856" height="856" rx="172" ry="172"/>
+  <g id="layer_04_center_sparkle" inkscape:groupmode="layer" inkscape:label="04 center sparkle">
+    <path id="white_four_point_sparkle" class="st7" d="M428.12,152.12c36,146,108,225,287,276-174,43-251,115-287,280-38-163-118-238-286-280,169-40,248-119,286-276h0Z"/>
+  </g>
+  <g id="layer_05_letter_E" inkscape:groupmode="layer" inkscape:label="05 letter E">
+    <g id="letter_E_text" class="st4">
+      <text class="st5" transform="translate(137.37 273.37)"><tspan x="0" y="0">E</tspan></text>
+    </g>
+  </g>
+  <g id="layer_06_letter_J" inkscape:groupmode="layer" inkscape:label="06 letter J">
+    <g id="letter_J_text" class="st4">
+      <text class="st3" transform="translate(591.43 748.63)"><tspan x="0" y="0">J</tspan></text>
+    </g>
+  </g>
+</svg>

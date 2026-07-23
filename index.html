@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- ===== 기본 설정 ===== -->
+  <meta charset="UTF-8">
+  <!-- 모바일 반응형을 위한 필수 태그 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EJ Portfolio | 차은정</title>
+
+  <!-- ===== 파비콘 연결 ===== -->
+  <link rel="icon" type="image/svg+xml" href="./image/EJ_favicon.svg">
+
+  <!-- ===== Bootstrap 5 CSS (CDN) ===== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ===== 내 커스텀 CSS (Step 2에서 만들 예정) ===== -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- ============================================
+       1. NAVBAR (상단 고정 메뉴)
+       - fixed-top: 스크롤해도 상단에 고정
+       - navbar-expand-lg: PC에서는 가로 메뉴, 모바일에서는 햄버거 버튼
+  ============================================= -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+    <div class="container">
+      <!-- 로고 (클릭하면 맨 위로) -->
+      <a class="navbar-brand fw-bold" href="#home">EJ<span class="text-purple">.</span></a>
+
+      <!-- 모바일용 햄버거 버튼 -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="메뉴 열기">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 메뉴 목록 -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#works">Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       2. HERO (첫 화면 인사 섹션)
+       - hero-gradient: 파비콘과 같은 보라 그라데이션 (style.css에서 정의)
+       - min-vh-100: 화면 세로 100% 채우기
+  ============================================= -->
+  <!-- <header id="home" class="hero-gradient text-white d-flex align-items-center min-vh-100">
+    <div class="container text-center">
+      <p class="mb-2 opacity-75">웹 · 영상 · 그래픽 디자인 포트폴리오</p>
+      <h1 class="display-4 fw-bold mb-3">
+        안녕하세요,<br>
+        디자인과 코드를 넘나드는<br>
+        크리에이터 <span class="text-warning">EJ</span>입니다
+      </h1>
+       CTA 버튼: 클릭하면 Works 섹션으로 이동 
+      <a href="#works" class="btn btn-light btn-lg mt-3 px-4">작업물 보러가기 ↓</a>
+    </div>
+  </header> -->
+  <!-- ============================================
+     2. HERO - 리디자인 버전
+============================================= -->
+<header id="home" class="hero-section">
+  <div class="hero-bg-circle circle-1"></div>
+  <div class="hero-bg-circle circle-2"></div>
+  <div class="hero-star star-1">✦</div>
+  <div class="hero-star star-2">✧</div>
+
+  <div class="container">
+    <div class="row align-items-center min-vh-100 g-5">
+
+      <!-- 왼쪽 텍스트 영역 -->
+      <div class="col-12 col-lg-6">
+        <div class="hero-text">
+          <span class="hero-label">EJ CREATIVE PORTFOLIO</span>
+
+          <h1 class="hero-title">
+            디자인과 코드를<br>
+            감각적인 결과물로<br>
+            <span>완성합니다</span>
+          </h1>
+
+          <p class="hero-desc">
+            웹디자인, 그래픽 디자인, 모션그래픽을 배우며  
+            아이디어를 직접 기획하고 화면 위에 구현합니다.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#works" class="btn btn-light hero-btn-main">작업물 보기</a>
+            <a href="#about" class="btn btn-outline-light hero-btn-sub">나를 소개할게요</a>
+          </div>
+
+          <div class="hero-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>After Effects</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 오른쪽 파비콘 프리뷰 카드 -->
+      <div class="col-12 col-lg-6">
+        <div class="hero-preview-wrap">
+
+          <div class="glass-card main-preview-card">
+            <div class="preview-top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="preview-icon-box">
+              <img src="./image/EJ_favicon.svg" alt="EJ Favicon">
+            </div>
+
+            <div class="preview-info">
+              <p class="preview-category">BRAND IDENTITY</p>
+              <h3>EJ Favicon Design</h3>
+              <p>보라색 그라데이션과 별 심볼을 활용한 개인 브랜드 아이콘</p>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card-1">
+            <strong>Web</strong>
+            <span>Mole Game</span>
+          </div>
+
+          <div class="floating-card floating-card-2">
+            <strong>Motion</strong>
+            <span>Product AD</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+  <!-- ============================================
+       3. ABOUT (자기소개)
+  ============================================= -->
+ <section id="about" class="about-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-12 col-lg-5">
+        <span class="section-label">ABOUT ME</span>
+        <h2 class="about-title">
+            배우고, 만들고,<br>
+            나만의 결과물로<br>
+            완성합니다.
+        </h2>
+        <p class="about-desc">
+          HTML/CSS/JavaScript와 Adobe 툴을 배우며
+          웹, 그래픽, 모션 작업을 하나씩 포트폴리오로 쌓아가고 있습니다.
+          작은 아이디어를 실제 화면과 영상으로 구현하는 과정을 좋아합니다.
+        </p>
+      </div>
+
+      <div class="col-12 col-lg-7">
+        <div class="about-card-grid">
+
+          <div class="about-mini-card">
+            <span>01</span>
+            <h3>Web Design</h3>
+            <p>HTML, CSS, JavaScript로 반응형 웹페이지와 미니 프로젝트를 제작합니다.</p>
+          </div>
+
+          <div class="about-mini-card">
+            <span>02</span>
+            <h3>Visual Design</h3>
+            <p>Photoshop과 Illustrator로 배너, 파비콘, 브랜드 비주얼을 디자인합니다.</p>
+          </div>
+
+          <div class="about-mini-card">
+            <span>03</span>
+            <h3>Motion Graphic</h3>
+            <p>After Effects를 활용해 제품 광고와 모션그래픽 영상을 기획하고 제작합니다.</p>
+          </div>
+
+        </div>
+
+        <div class="about-skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Bootstrap</span>
+          <span>Photoshop</span>
+          <span>Illustrator</span>
+          <span>After Effects</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  
+<section id="works" class="works-section">
+  <div class="container py-5">
+
+    <div class="section-title text-center mb-5">
+      <span class="section-label">WEB &amp; DESIGN EXPERIMENTS</span>
+      <h2>Creative Playground</h2>
+      <p>미니게임, 웹 인터랙션과 디자인 실험을<br class="d-none d-sm-block">HTML, CSS와 JavaScript로 직접 구현한 프로젝트입니다.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- 카드 1: Mole Game -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb">
+            <span class="category-label">WEB GAME</span>
+            <img class="thumb-visual" src="./image/mole1-img.png" alt="두더지 게임 화면">
+          </div>
+
+          <div class="portfolio-body">
+            <h3>Mole Game</h3>
+            <p class="portfolio-desc">제한 시간 안에 나타나는 두더지를 클릭해 점수를 얻는 JavaScript 미니게임입니다.</p>
+            <p class="tool-tags">HTML · CSS · JavaScript</p>
+            <a href="https://jeffreymom.github.io/mole-game/" target="_blank" rel="noopener noreferrer" class="work-link">
+              플레이하기 <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 카드 2: Daily Quote Generator -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-quote">
+            <span class="category-label">WEB PROJECT</span>
+            <div class="thumb-visual quote-mock">
+              <span class="quote-mock-mark" aria-hidden="true">&ldquo;</span>
+              <p class="quote-mock-text">작은 습관이 큰 변화를 만든다.</p>
+              <span class="quote-mock-author">— Daily Quote</span>
+              <span class="quote-mock-btn">New Quote ↻</span>
+            </div>
+          </div>
+
+          <div class="portfolio-body">
+            <h3>Daily Quote Generator</h3>
+            <p class="portfolio-desc">버튼을 클릭할 때마다 새로운 명언을 보여주는 랜덤 명언 생성기입니다.</p>
+            <p class="tool-tags">HTML · CSS · JavaScript</p>
+            <a href="https://jeffreymom.github.io/day01-quote/" target="_blank" rel="noopener noreferrer" class="work-link">
+              프로젝트 보기 <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 카드 3: Favicon Design -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb">
+            <span class="category-label">BRANDING</span>
+            <img class="thumb-visual" src="./image/EJ_favicon.svg" alt="EJ 보라색 파비콘 디자인">
+          </div>
+
+          <div class="portfolio-body">
+            <h3>Favicon Design</h3>
+            <p class="portfolio-desc">보라색 그라데이션과 별 심볼을 활용한 EJ 브랜드 아이콘 디자인입니다.</p>
+            <p class="tool-tags">Illustrator · SVG · Design</p>
+            <a href="#" class="work-link">
+              자세히 보기 <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 카드 4: Memory Card Game -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-memory">
+            <span class="category-label">WEB GAME</span>
+            <div class="thumb-visual memory-mock" aria-hidden="true">
+              <span class="mock-card flipped">🍀</span>
+              <span class="mock-card">?</span>
+              <span class="mock-card">?</span>
+              <span class="mock-card flipped">⭐</span>
+              <span class="mock-card flipped">⭐</span>
+              <span class="mock-card">?</span>
+              <span class="mock-card">?</span>
+              <span class="mock-card flipped">🍀</span>
+            </div>
+          </div>
+
+          <div class="portfolio-body">
+            <h3>Memory Card Game</h3>
+            <p class="portfolio-desc">같은 그림의 카드를 찾아 맞추는 기억력 카드 게임입니다.</p>
+            <p class="tool-tags">HTML · CSS · JavaScript</p>
+            <a href="./memory-game.html" class="work-link">
+              플레이하기 <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 카드 5: Color Match Game -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-color">
+            <span class="category-label">WEB GAME</span>
+            <div class="thumb-visual color-mock" aria-hidden="true">
+              <div class="color-mock-target"></div>
+              <div class="color-mock-swatches">
+                <span style="background:#7C5FD6"></span>
+                <span style="background:#F2784B"></span>
+                <span style="background:#22A06B"></span>
+                <span style="background:#F5B942"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-body">
+            <h3>Color Match Game</h3>
+            <p class="portfolio-desc">제한 시간 안에 목표 색상과 같은 색을 찾는 스피드 게임입니다.</p>
+            <p class="tool-tags">HTML · CSS · JavaScript</p>
+            <a href="./color-match.html" class="work-link">
+              플레이하기 <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 카드 6: Reaction Speed Test -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-reaction">
+            <span class="category-label">WEB GAME</span>
+            <div class="thumb-visual reaction-mock" aria-hidden="true">
+              <span class="reaction-mock-label">CLICK!</span>
+              <span class="reaction-mock-time">182ms · Excellent</span>
+            </div>
+          </div>
+
+          <div class="portfolio-body">
+            <h3>Reaction Speed Test</h3>
+            <p class="portfolio-desc">화면이 바뀌는 순간을 클릭해 반응속도를 측정하는 게임입니다.</p>
+            <p class="tool-tags">HTML · CSS · JavaScript</p>
+            <a href="./reaction-test.html" class="work-link">
+              플레이하기 <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+    <div class="explored-section">
+      <div class="section-title text-center mb-5">
+        <span class="section-label">SKILLS IN PRACTICE</span>
+        <h2>What I Explored</h2>
+      </div>
+
+      <div class="explored-grid">
+        <div class="explored-item">
+          <h3>JavaScript Events</h3>
+          <p>클릭, 키보드와 터치 이벤트 처리</p>
+        </div>
+        <div class="explored-item">
+          <h3>DOM Manipulation</h3>
+          <p>게임 상태에 따라 화면 요소를 동적으로 변경</p>
+        </div>
+        <div class="explored-item">
+          <h3>Array Shuffle</h3>
+          <p>카드와 색상 옵션을 매번 랜덤하게 재배치</p>
+        </div>
+        <div class="explored-item">
+          <h3>Game Logic</h3>
+          <p>승패 조건과 라운드 진행을 상태값으로 관리</p>
+        </div>
+        <div class="explored-item">
+          <h3>Timer &amp; Score</h3>
+          <p>setInterval 기반 카운트다운과 점수 계산</p>
+        </div>
+        <div class="explored-item">
+          <h3>localStorage</h3>
+          <p>새로고침 후에도 남는 최고 기록 저장</p>
+        </div>
+        <div class="explored-item">
+          <h3>CSS Animation</h3>
+          <p>카드 플립과 상태 전환을 부드럽게 표현</p>
+        </div>
+        <div class="explored-item">
+          <h3>Responsive Layout</h3>
+          <p>데스크톱 · 태블릿 · 모바일 대응 그리드</p>
+        </div>
+        <div class="explored-item">
+          <h3>Keyboard Interaction</h3>
+          <p>스페이스바로도 게임을 조작할 수 있게 구현</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-link-wrap text-center">
+      <a href="https://jeffreymom.github.io/ej-portfolio/" target="_blank" rel="noopener noreferrer" class="portfolio-main-link">
+        View Main Portfolio <span class="arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ============================================
+       5. CONTACT (연락처)
+  ============================================= -->
+  <section id="contact" class="py-5">
+    <div class="container py-4 text-center">
+      <h2 class="fw-bold mb-3">Contact</h2>
+      <p class="text-secondary mb-4">함께 작업하고 싶다면 연락주세요</p>
+           <a href="mailto:cej3968@gmail.com" class="btn btn-purple me-2">이메일 보내기</a>
+      <a href="https://github.com/Jeffreymom" target="_blank" rel="noopener" class="btn btn-outline-purple">GitHub</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. FOOTER (하단)
+  ============================================= -->
+  <footer class="footer-dark text-white text-center py-4">
+    <div class="container">
+      <small>© 2026 EJ Portfolio. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- ===== Bootstrap 5 JS (햄버거 메뉴 작동에 필요) ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ===== 내 커스텀 JS (Step 5에서 만들 예정) ===== -->
+  <script src="./js/app.js"></script>
+
+</body>
+</html>

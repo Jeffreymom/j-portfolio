@@ -1,0 +1,1013 @@
+/* ============================================
+   EJ Portfolio - style.css
+   보라색 파비콘(EJ) 색감 기반 커스텀 스타일
+   ============================================ */
+
+/* ============================================
+   1. 색상 변수 (여기만 바꾸면 사이트 전체 색이 바뀜!)
+   - 파비콘에서 추출한 실제 색상값 사용
+   ============================================ */
+:root {
+  --purple-main:  #7C5FD6;   /* 메인 보라 (파비콘 밝은 부분) */
+  --purple-mid:   #462F8A;   /* 중간 보라 (호버, 그라데이션) */
+  --purple-dark:  #34215D;   /* 진한 보라 (Footer, 그라데이션 끝) */
+  --purple-light: #F1EDFB;   /* 아주 연한 보라 (섹션 배경) */
+  --text-dark:    #1F2937;   /* 본문 글자색 */
+}
+
+/* ============================================
+   2. 공통 설정
+   ============================================ */
+body {
+  color: var(--text-dark);
+  /* 한글이 예쁘게 보이는 시스템 폰트 우선 */
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+/* 네비 메뉴 클릭 시 섹션이 navbar에 가려지지 않게 여백 확보 */
+html {
+  scroll-behavior: smooth;      /* 부드러운 스크롤 이동 */
+  scroll-padding-top: 70px;     /* 고정 navbar 높이만큼 여백 */
+}
+
+/* ============================================
+   3. 색상 유틸리티 클래스 (index.html에서 사용 중)
+   ============================================ */
+
+/* 보라색 글자 (로고의 점 등) */
+.text-purple {
+  color: var(--purple-main);
+}
+
+/* 연보라 배경 (Works 섹션) */
+.bg-light-purple {
+  background-color: var(--purple-light);
+}
+
+/* ============================================
+   4. NAVBAR
+   ============================================ */
+
+/* 메뉴 글자: 기본은 회색, 마우스 올리면 보라색 */
+.navbar .nav-link {
+  color: #555;
+  font-weight: 500;
+  transition: color 0.2s;   /* 색이 부드럽게 바뀌는 효과 */
+}
+
+.navbar .nav-link:hover {
+  color: var(--purple-main);
+}
+
+/* ============================================
+   5. HERO (첫 화면)
+   - 파비콘과 동일한 대각선 그라데이션
+   ============================================ */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,                    /* 대각선 방향 (좌상단 → 우하단) */
+    var(--purple-main) 0%,     /* 시작: 밝은 보라 */
+    var(--purple-mid)  55%,    /* 중간 보라 */
+    var(--purple-dark) 100%    /* 끝: 진한 보라 */
+  );
+}
+
+/* Hero 안의 강조 글자(EJ)를 흰색+밑줄 느낌으로 
+   (Bootstrap의 text-warning 노란색을 덮어씀) */
+.hero-gradient .text-warning {
+  color: #fff !important;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   6. 보라색 버튼 (btn-purple / btn-outline-purple)
+   ============================================ */
+
+/* 꽉 찬 보라 버튼 */
+.btn-purple {
+  background-color: var(--purple-main);
+  color: #fff;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-purple:hover {
+  background-color: var(--purple-mid);  /* 호버 시 더 진하게 */
+  color: #fff;
+}
+
+/* 테두리만 있는 보라 버튼 */
+.btn-outline-purple {
+  background-color: transparent;
+  color: var(--purple-main);
+  border: 1.5px solid var(--purple-main);
+  transition: all 0.2s;
+}
+
+.btn-outline-purple:hover {
+  background-color: var(--purple-main);  /* 호버 시 채워짐 */
+  color: #fff;
+}
+
+/* ============================================
+   7. 스킬 뱃지 (About + 카드에서 사용)
+   ============================================ */
+.skill-badge {
+  background-color: var(--purple-light);  /* 연보라 배경 */
+  color: var(--purple-mid);               /* 진한 보라 글자 */
+  font-weight: 500;
+  padding: 0.45em 0.9em;
+}
+
+/* ============================================
+   8. 작업물 카드 (Works 섹션)
+   ============================================ */
+/*.work-card {
+ /* border: none;                /* Bootstrap 기본 테두리 제거 */
+ /* border-radius: 14px;         /* 파비콘처럼 둥근 모서리 */
+/*  overflow: hidden;            /* 이미지가 둥근 모서리 밖으로 안 나가게 */
+/*  transition: transform 0.25s, box-shadow 0.25s;*/
+/*}   */
+
+.work-card {
+  border: 1px solid rgba(124, 95, 214, 0.12);
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 35px rgba(52, 33, 93, 0.08);
+}
+
+/* 마우스 올리면 살짝 떠오르는 효과 */
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(70, 47, 138, 0.18);  /* 보라빛 그림자 */
+}
+
+/* 카드 썸네일: 높이 통일 + 비율 유지하며 꽉 채우기 */
+/* .work-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+} */
+
+.work-card .card-img-top {
+  height: 230px;
+  object-fit: contain;
+  background: linear-gradient(135deg, #f6f1ff, #ffffff);
+  padding: 24px;
+}
+
+/* ============================================
+   9. FOOTER
+   ============================================ */
+.footer-dark {
+  background-color: var(--purple-dark);  /* 파비콘의 가장 진한 보라 */
+}
+
+
+
+
+
+
+
+
+/* ============================================
+   HERO REDESIGN
+============================================ */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.18), transparent 26%),
+    radial-gradient(circle at 85% 18%, rgba(188, 167, 255, 0.28), transparent 28%),
+    linear-gradient(135deg, #7C5FD6 0%, #462F8A 48%, #2B1B4F 100%);
+}
+
+.hero-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.circle-1 {
+  width: 260px;
+  height: 260px;
+  left: -80px;
+  bottom: 90px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.circle-2 {
+  width: 380px;
+  height: 380px;
+  right: -120px;
+  top: 120px;
+  background: rgba(179, 150, 255, 0.32);
+}
+
+.hero-star {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.star-1 {
+  top: 22%;
+  left: 48%;
+  font-size: 42px;
+}
+
+.star-2 {
+  bottom: 20%;
+  right: 12%;
+  font-size: 68px;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 5vw, 4.7rem);
+  line-height: 1.16;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  margin-bottom: 24px;
+  word-break: keep-all;
+}
+
+.hero-title span {
+  color: #fff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.28);
+}
+
+.hero-desc {
+  max-width: 560px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.08rem;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-btn-main,
+.hero-btn-sub {
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+}
+
+.hero-btn-sub {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-tags span {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.82rem;
+}
+
+/* 오른쪽 프리뷰 카드 */
+
+.hero-preview-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 80px rgba(24, 12, 58, 0.35);
+}
+
+.main-preview-card {
+  padding: 22px;
+}
+
+.preview-top {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.preview-top span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.preview-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 290px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.9), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+}
+
+.preview-icon-box img {
+  width: min(260px, 72%);
+  filter: drop-shadow(0 20px 30px rgba(26, 14, 67, 0.32));
+}
+
+.preview-info {
+  padding: 22px 4px 2px;
+}
+
+.preview-category {
+  margin-bottom: 5px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 700;
+}
+
+.preview-info h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.preview-info p:last-child {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.floating-card {
+  position: absolute;
+  min-width: 130px;
+  padding: 15px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #34215D;
+  box-shadow: 0 18px 40px rgba(25, 13, 58, 0.22);
+}
+
+.floating-card strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.floating-card span {
+  font-size: 0.78rem;
+  color: #6b6480;
+}
+
+.floating-card-1 {
+  left: -35px;
+  bottom: 95px;
+}
+
+.floating-card-2 {
+  right: -30px;
+  top: 90px;
+}
+
+/* ============================================
+   WORKS REDESIGN
+============================================ */
+
+.works-section {
+  position: relative;
+  padding: 90px 0;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(124, 95, 214, 0.14), transparent 24%),
+    linear-gradient(180deg, #FBFAFF 0%, #F1EDFB 100%);
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--purple-main);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #777184;
+}
+
+.portfolio-card {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(124, 95, 214, 0.12);
+  box-shadow: 0 4px 14px rgba(52, 33, 93, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(52, 33, 93, 0.1);
+  border-color: rgba(124, 95, 214, 0.26);
+}
+
+.portfolio-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F7F3FF 0%, #FFFFFF 100%);
+}
+
+.portfolio-thumb img.thumb-visual {
+  max-width: 82%;
+  max-height: 82%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 24px rgba(52, 33, 93, 0.13));
+}
+
+.thumb-visual {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .thumb-visual {
+  transform: scale(1.02);
+}
+
+.category-label {
+  position: absolute;
+  left: 22px;
+  top: 20px;
+  z-index: 2;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(124, 95, 214, 0.1);
+  color: var(--purple-mid);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.portfolio-body {
+  padding: 26px 28px;
+}
+
+.portfolio-body h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-body p {
+  color: #6f687c;
+  line-height: 1.6;
+}
+
+.portfolio-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+/* 기술 태그: pill 없이 가운데 점(·)으로 구분한 텍스트 */
+.tool-tags {
+  margin: 0 0 18px;
+  color: #8b8496;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* CTA: 큰 보라 버튼 대신 텍스트 링크 + 화살표 */
+.work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--purple-main);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.work-link .arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.work-link:hover {
+  color: var(--purple-mid);
+}
+
+.work-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+.empty-thumb {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(124, 95, 214, 0.16), transparent 28%),
+    linear-gradient(135deg, #FBFAFF 0%, #F3EEFF 100%);
+}
+
+.thumb-placeholder {
+  text-align: center;
+  color: var(--purple-mid);
+}
+
+.thumb-placeholder span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.thumb-placeholder p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+/* 기존 Bootstrap 카드 스타일이 남아있을 때 충돌 방지 */
+.work-card {
+  border-radius: 28px;
+}
+
+.hero-section .row {
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 991px) {
+  .hero-section {
+    padding: 120px 0 80px;
+  }
+
+  .hero-title {
+    font-size: 3.3rem;
+    line-height: 1.18;
+  }
+
+  .hero-preview-wrap {
+    margin-top: 30px;
+  }
+
+  .floating-card-1 {
+    left: 10px;
+  }
+
+  .floating-card-2 {
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.35rem;
+    line-height: 1.22;
+  }
+
+  .hero-desc {
+    font-size: 0.98rem;
+  }
+
+  .preview-icon-box {
+    min-height: 230px;
+  }
+
+  .floating-card {
+    display: none;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+/* ============================================
+   ABOUT REDESIGN
+============================================ */
+
+.about-section {
+  position: relative;
+  padding: 110px 0;
+  background: #fff;
+}
+
+.about-title {
+  margin: 0 0 22px;
+  font-size: clamp(2.1rem, 3.4vw, 3.15rem);
+  line-height: 1.22;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  color: var(--text-dark);
+  word-break: keep-all;
+}
+
+.about-desc {
+  color: #6f687c;
+  font-size: 1rem;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+
+.about-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.about-mini-card {
+  min-height: 200px;
+  padding: 26px 24px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(124, 95, 214, 0.13), transparent 34%),
+    linear-gradient(135deg, #FBFAFF 0%, #FFFFFF 100%);
+  border: 1px solid rgba(124, 95, 214, 0.13);
+  box-shadow: 0 16px 40px rgba(52, 33, 93, 0.06);
+}
+
+.about-mini-card span {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--purple-main);
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.about-mini-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.12rem;
+  font-weight: 900;
+  color: var(--text-dark);
+}
+
+.about-mini-card p {
+  margin: 0;
+  color: #716a80;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.about-skills span {
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #F0EAFD;
+  color: var(--purple-mid);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .about-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    padding: 80px 0;
+  }
+}
+
+/* ============================================
+   WORKS THUMBNAIL MOCKUPS
+   이미지가 없는 프로젝트는 실제 게임 UI를 닮은
+   HTML/CSS 미니 목업으로 썸네일을 대신함
+============================================ */
+
+/* Daily Quote Generator */
+.thumb-quote {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F3EEFF 0%, #FFFFFF 100%);
+}
+
+.quote-mock {
+  width: 100%;
+  max-width: 230px;
+  padding: 18px 16px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(124, 95, 214, 0.14);
+  box-shadow: 0 10px 24px rgba(52, 33, 93, 0.1);
+  text-align: center;
+}
+
+.quote-mock-mark {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--purple-main);
+  margin-bottom: 4px;
+}
+
+.quote-mock-text {
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.quote-mock-author {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.74rem;
+  color: #8b8496;
+}
+
+.quote-mock-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--purple-main);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Memory Card Game */
+.thumb-memory {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F3EEFF 0%, #FFFFFF 100%);
+}
+
+.memory-mock {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 220px;
+}
+
+.mock-card {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--purple-main), var(--purple-mid));
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.mock-card.flipped {
+  background: #fff;
+  border: 1px solid rgba(124, 95, 214, 0.18);
+  font-size: 1.1rem;
+}
+
+/* Color Match Game */
+.thumb-color {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F3EEFF 0%, #FFFFFF 100%);
+}
+
+.color-mock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.color-mock-target {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: #7C5FD6;
+  box-shadow: 0 8px 18px rgba(52, 33, 93, 0.16);
+}
+
+.color-mock-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.color-mock-swatches span {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Reaction Speed Test */
+.thumb-reaction {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F3EEFF 0%, #FFFFFF 100%);
+}
+
+.reaction-mock {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--purple-main), var(--purple-mid));
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(52, 33, 93, 0.16);
+}
+
+.reaction-mock-label {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.reaction-mock-time {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ============================================
+   WHAT I EXPLORED
+============================================ */
+
+.explored-section {
+  margin-top: 90px;
+}
+
+.explored-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.explored-item {
+  padding: 22px 26px;
+  border-top: 1px solid rgba(124, 95, 214, 0.16);
+}
+
+.explored-grid .explored-item:nth-child(-n+3) {
+  border-top: 1px solid rgba(124, 95, 214, 0.16);
+}
+
+.explored-item:not(:nth-child(3n+1)) {
+  border-left: 1px solid rgba(124, 95, 214, 0.16);
+}
+
+.explored-item h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.explored-item p {
+  margin: 0;
+  color: #8b8496;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   MAIN PORTFOLIO LINK
+============================================ */
+
+.portfolio-link-wrap {
+  margin-top: 60px;
+}
+
+.portfolio-main-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--purple-main);
+  font-weight: 800;
+  font-size: 0.98rem;
+  border-bottom: 1.5px solid rgba(124, 95, 214, 0.35);
+  padding-bottom: 4px;
+}
+
+.portfolio-main-link .arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.portfolio-main-link:hover {
+  color: var(--purple-mid);
+}
+
+.portfolio-main-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 767px) {
+  .explored-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explored-item,
+  .explored-item:not(:nth-child(3n+1)) {
+    border-left: none;
+  }
+
+  .explored-item:not(:first-child) {
+    border-top: 1px solid rgba(124, 95, 214, 0.16);
+  }
+
+  .explored-section {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .explored-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .explored-item:not(:nth-child(3n+1)) {
+    border-left: none;
+  }
+
+  .explored-item:nth-child(odd) {
+    border-left: none;
+  }
+
+  .explored-item:nth-child(even) {
+    border-left: 1px solid rgba(124, 95, 214, 0.16);
+  }
+
+  .explored-item:nth-child(-n+2) {
+    border-top: 1px solid rgba(124, 95, 214, 0.16);
+  }
+}
+

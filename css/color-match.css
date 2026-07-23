@@ -1,0 +1,75 @@
+/* ============================================
+   Color Match Game - 전용 스타일
+   ============================================ */
+
+.color-target {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.color-target-box {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 16px rgba(52, 33, 93, 0.14);
+}
+
+.color-target-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.color-target-hint {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: #8b8496;
+}
+
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.color-option {
+  min-height: 60px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: transform 0.12s ease;
+}
+
+.color-option:active {
+  transform: scale(0.96);
+}
+
+.color-option:focus-visible {
+  outline: 3px solid var(--purple-dark);
+  outline-offset: 2px;
+}
+
+.color-option.correct-flash {
+  box-shadow: 0 0 0 3px var(--purple-dark) inset;
+}
+
+.color-option.wrong-flash {
+  box-shadow: 0 0 0 3px #7A2A22 inset;
+}
+
+@media (max-width: 576px) {
+  .color-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .color-option {
+    min-height: 72px;
+  }
+}

@@ -1,0 +1,76 @@
+/* ============================================
+   Reaction Speed Test - 전용 스타일
+   ============================================ */
+
+.reaction-area {
+  height: 220px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  transition: background 0.15s ease;
+}
+
+.reaction-area:focus-visible {
+  outline: 3px solid var(--purple-main);
+  outline-offset: 4px;
+}
+
+.reaction-area.state-wait {
+  background: #EDEAF6;
+  color: #6f687c;
+}
+
+.reaction-area.state-ready {
+  background: #2FA872;
+  color: #fff;
+}
+
+.reaction-area.state-toosoon {
+  background: #C64A3E;
+  color: #fff;
+}
+
+.reaction-area.state-clicked {
+  background: var(--purple-main);
+  color: #fff;
+}
+
+.reaction-msg {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  padding: 0 16px;
+}
+
+.reaction-history {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.reaction-history li {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  .reaction-area {
+    height: 260px;
+  }
+}

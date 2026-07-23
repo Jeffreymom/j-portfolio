@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reaction Speed Test | EJ Creative Playground</title>
+
+  <link rel="icon" type="image/svg+xml" href="./image/EJ_favicon.svg">
+
+  <link rel="stylesheet" href="./css/games-common.css">
+  <link rel="stylesheet" href="./css/reaction-test.css">
+</head>
+<body class="game-page">
+
+  <header class="game-header">
+    <div class="game-container game-header-inner">
+      <a class="game-logo" href="./index.html">
+        <strong>EJ<span>.</span></strong>
+        <span class="game-logo-sub">Creative Playground</span>
+      </a>
+      <a class="game-home-link" href="./index.html">← Home</a>
+    </div>
+  </header>
+
+  <main class="game-main">
+    <div class="game-container">
+
+      <section class="game-intro">
+        <span class="section-label">WEB GAME</span>
+        <h1>Reaction Speed Test</h1>
+        <p class="game-desc">화면이 바뀌는 순간을 클릭해 반응속도를 측정하는 게임입니다.</p>
+        <p class="game-tech">사용 기술: HTML · CSS · JavaScript</p>
+      </section>
+
+      <section class="game-stage" aria-label="Reaction Speed Test 실행 영역">
+        <div class="game-stats">
+          <div>Round: <span id="roundNum">0</span>/5</div>
+          <div>Best: <span id="best">--</span></div>
+        </div>
+
+        <div class="reaction-area state-idle" id="reactionArea" tabindex="0" role="button"
+          aria-label="반응속도 테스트 영역, 클릭 또는 스페이스바로 반응">
+          <p class="reaction-msg" id="reactionMsg" aria-live="polite">Start를 눌러 시작하세요</p>
+        </div>
+
+        <ul class="reaction-history" id="reactionHistory"></ul>
+
+        <div class="game-controls">
+          <button type="button" id="startBtn" class="game-btn" aria-label="게임 시작">Start</button>
+          <button type="button" id="restartBtn" class="game-btn game-btn-outline" aria-label="게임 다시 시작" hidden>Restart</button>
+          <a href="./index.html#works" class="game-btn game-btn-outline">Back to Projects</a>
+        </div>
+
+        <div class="game-result" id="gameResult" hidden>
+          <p id="resultText"></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="game-footer">
+    <div class="game-container">
+      <p>화면 색이 바뀌는 순간 클릭 또는 스페이스바로 반응해 5회 평균 반응속도를 측정합니다.</p>
+      <p class="game-footer-tech">사용 기술: HTML · CSS · JavaScript</p>
+      <a href="./index.html#works" class="game-footer-link">← 메인 프로젝트 목록으로 돌아가기</a>
+      <small>© 2026 EJ Portfolio. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="./js/reaction-test.js"></script>
+</body>
+</html>
