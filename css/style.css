@@ -13,6 +13,10 @@
   --purple-dark:  #34215D;   /* 진한 보라 (Footer, 그라데이션 끝) */
   --purple-light: #F1EDFB;   /* 아주 연한 보라 (섹션 배경) */
   --text-dark:    #1F2937;   /* 본문 글자색 */
+
+  --ink:    #1F2937;   /* More Projects 제목 색 */
+  --muted:  #777184;   /* More Projects 설명 텍스트 색 */
+  --accent: var(--purple-main); /* More Projects 강조색 (페이지네이션 등) */
 }
 
 /* ============================================
@@ -1011,3 +1015,169 @@ html {
   }
 }
 
+.more-projects-section {
+  width: 100%;
+  padding: 130px 0;
+  background: var(--purple-light);
+  overflow: hidden;
+}
+.more-projects-heading {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  padding: 0 24px;
+  text-align: center;
+}
+.more-projects-heading h2 {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.more-projects-heading p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.more-projects-swiper {
+  width: 100%;
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 20px 24px 56px;
+}
+
+/* fallback size before Swiper JS computes/overrides the inline slide width */
+.more-projects-slide {
+  width: min(390px, 78vw);
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+
+.more-projects-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(20, 20, 30, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.more-projects-card:hover,
+.more-projects-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(20, 20, 30, 0.18);
+}
+.more-projects-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.more-projects-slide:not(.swiper-slide-active) .more-projects-card {
+  opacity: 0.62;
+}
+.more-projects-slide.swiper-slide-active .more-projects-card {
+  opacity: 1;
+}
+
+.more-projects-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.more-projects-category {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 2;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: rgba(20, 20, 30, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.more-projects-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(12, 12, 18, 0) 45%, rgba(12, 12, 18, 0.72) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.more-projects-card:hover .more-projects-overlay,
+.more-projects-card:focus-visible .more-projects-overlay {
+  opacity: 1;
+}
+.more-projects-overlay strong {
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.more-projects-pagination.swiper-pagination {
+  position: static;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.more-projects-pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  margin: 0;
+  background: #c7c3ba;
+  opacity: 0.55;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+.more-projects-pagination .swiper-pagination-bullet-active {
+  background: var(--accent);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media (max-width: 991.98px) {
+  .more-projects-section {
+    padding: 90px 0;
+  }
+  .more-projects-heading {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 575.98px) {
+  .more-projects-section {
+    padding: 70px 0;
+  }
+  .more-projects-swiper {
+    padding: 16px 16px 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-projects-card {
+    transition: none;
+  }
+  .more-projects-card:hover,
+  .more-projects-card:focus-visible {
+    transform: none;
+  }
+  .more-projects-overlay {
+    transition: none;
+  }
+}

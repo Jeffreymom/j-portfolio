@@ -123,3 +123,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+    const moreProjectsSwiperEl = document.querySelector(".more-projects-swiper");
+    if (moreProjectsSwiperEl && window.Swiper) {
+        const prefersReducedMotionSlider = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        new Swiper(moreProjectsSwiperEl, {
+            effect: prefersReducedMotionSlider ? "slide" : "coverflow",
+            centeredSlides: true,
+            loop: true,
+            grabCursor: true,
+            slideToClickedSlide: true,
+            keyboard: { enabled: true },
+            speed: prefersReducedMotionSlider ? 0 : 600,
+            coverflowEffect: {
+                rotate: 18,
+                stretch: 0,
+                depth: 170,
+                modifier: 1.15,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".more-projects-pagination",
+                clickable: true,
+            },
+            slidesPerView: 1.35,
+            spaceBetween: 16,
+            breakpoints: {
+                768: { slidesPerView: 2.5, spaceBetween: 20 },
+                1200: { slidesPerView: 4.6, spaceBetween: 22 },
+                1600: { slidesPerView: 5.2, spaceBetween: 22 },
+            },
+        });
+    }
