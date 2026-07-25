@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1020" />
+  <title>ODD ONE OUT — 틀린 하나 찾기</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="game-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">VISUAL ATTENTION TEST</p>
+          <h1>ODD ONE OUT</h1>
+        </div>
+        <button id="soundBtn" class="icon-btn" type="button" aria-label="효과음 켜기 또는 끄기">🔊</button>
+      </header>
+
+      <section class="statusbar">
+        <div>
+          <span>LEVEL</span>
+          <strong><b id="levelText">1</b> / <b id="totalLevelText">30</b></strong>
+        </div>
+        <div class="center-stat">
+          <span>TIME</span>
+          <strong id="timeText">0.000s</strong>
+        </div>
+        <div class="right-stat">
+          <span>MISTAKES</span>
+          <strong id="mistakeText">0</strong>
+        </div>
+      </section>
+
+      <section class="game-area">
+        <div id="grid" class="symbol-grid" aria-label="다른 하나를 찾는 게임판"></div>
+
+        <div id="introOverlay" class="overlay">
+          <article class="modal-card intro-card">
+            <span class="pill">HOW TO PLAY</span>
+            <h2>모두 같은 항목 속에서<br>다른 하나를 찾아보세요.</h2>
+            <p>
+              레벨이 올라갈수록 항목 수가 많아지고 차이가 더 미세해집니다.<br>
+              최대한 빠르고 정확하게 선택해보세요.
+            </p>
+            <button id="startBtn" class="primary-btn" type="button">테스트 시작</button>
+          </article>
+        </div>
+
+        <div id="levelOverlay" class="overlay overlay--clear" hidden>
+          <article class="modal-card level-card">
+            <span class="pill">LEVEL CLEAR</span>
+            <strong id="levelScore" class="huge-number">1.284s</strong>
+            <p id="levelMessage">정확하게 찾았어요!</p>
+            <button id="nextBtn" class="primary-btn" type="button">다음 레벨</button>
+          </article>
+        </div>
+
+        <div id="finalOverlay" class="overlay" hidden>
+          <article class="modal-card final-card">
+            <span class="pill">FINAL RESULT</span>
+            <p>당신의 틀린 하나 찾기 기록은</p>
+            <strong id="finalTime" class="huge-number">0.000s</strong>
+            <h2 id="gradeText">집중력 분석 중</h2>
+            <p id="finalMessage" class="final-message"></p>
+
+            <div class="summary-grid">
+              <div><span>총 시간</span><b id="summaryTime">0.0초</b></div>
+              <div><span>실수</span><b id="summaryMistakes">0회</b></div>
+              <div><span>정확도</span><b id="summaryAccuracy">100%</b></div>
+              <div><span>최고 기록</span><b id="summaryBest">-</b></div>
+            </div>
+
+            <div class="button-row">
+              <button id="resetBestBtn" class="secondary-btn" type="button">기록 초기화</button>
+              <button id="retryBtn" class="primary-btn" type="button">다시 도전</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="hint">
+        <span class="hint-dot"></span>
+        키보드 사용 시 방향키로 이동하고 Enter로 선택할 수 있어요.
+      </footer>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

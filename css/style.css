@@ -901,6 +901,136 @@ html {
   color: rgba(255, 255, 255, 0.82);
 }
 
+/* Perfect Circle */
+.thumb-circle {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F3EEFF 0%, #FFFFFF 100%);
+}
+
+.circle-mock {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-mock-ring {
+  position: absolute;
+  inset: 0;
+  border: 3px dashed var(--purple-main);
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.circle-mock-radius {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 70px;
+  background: #22A06B;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(-18deg);
+  border-radius: 3px;
+}
+
+.circle-mock-score {
+  position: relative;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--purple-mid);
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(52, 33, 93, 0.14);
+}
+
+/* Escapa */
+.thumb-escape {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F3EEFF 0%, #FFFFFF 100%);
+}
+
+.escape-mock {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(124, 95, 214, 0.16);
+  box-shadow: 0 10px 24px rgba(52, 33, 93, 0.1);
+  overflow: hidden;
+}
+
+.escape-mock-player {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #E15656;
+  box-shadow: 0 6px 12px rgba(225, 86, 86, 0.35);
+}
+
+.escape-mock-obstacle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4C7DF0;
+  box-shadow: 0 6px 12px rgba(76, 125, 240, 0.35);
+}
+
+.escape-mock-obstacle-1 {
+  right: 22px;
+  top: 18px;
+}
+
+.escape-mock-obstacle-2 {
+  right: 46px;
+  bottom: 20px;
+}
+
+/* Odd One Out */
+.thumb-odd {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.9), transparent 32%),
+    linear-gradient(135deg, #F3EEFF 0%, #FFFFFF 100%);
+}
+
+.odd-mock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 170px;
+}
+
+.odd-mock-cell {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(124, 95, 214, 0.16);
+  color: var(--text-dark);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.odd-mock-cell--diff {
+  background: linear-gradient(135deg, var(--purple-main), var(--purple-mid));
+  border-color: transparent;
+  color: #fff;
+}
+
 /* ============================================
    WHAT I EXPLORED
 ============================================ */

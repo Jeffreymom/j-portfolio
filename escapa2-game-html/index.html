@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b10" />
+  <title>ESCAPA — 반응속도 게임</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="game-card">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">REACTION GAME</p>
+          <h1>ESCAPA</h1>
+        </div>
+        <button id="soundBtn" class="icon-btn" type="button" aria-label="사운드 켜기/끄기">🔊</button>
+      </header>
+
+      <div class="score-panel">
+        <div>
+          <span class="score-label">생존 시간</span>
+          <strong id="timeText">0.0</strong>
+          <span class="score-unit">초</span>
+        </div>
+        <div class="best-score">
+          <span>BEST</span>
+          <strong id="bestText">0.0초</strong>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" aria-label="빨간 사각형을 드래그해 파란 장애물을 피하는 게임"></canvas>
+
+        <div id="startOverlay" class="overlay overlay--start">
+          <div class="overlay-card">
+            <span class="mini-badge">HOW TO PLAY</span>
+            <h2>빨간 블록을 잡고<br>끝까지 살아남으세요.</h2>
+            <p>움직이는 파란 블록에 닿으면 게임이 끝납니다.<br>마우스 또는 손가락으로 움직일 수 있어요.</p>
+            <button id="startBtn" class="primary-btn" type="button">게임 시작</button>
+          </div>
+        </div>
+
+        <div id="resultOverlay" class="overlay overlay--result" hidden>
+          <div class="result-card">
+            <p id="resultTitle" class="result-title">0.0초 동안 생존했습니다!</p>
+            <p id="recordMessage" class="record-message">최고 기록에 도전해보세요.</p>
+            <p class="saved-message">기록은 이 브라우저에 자동 저장됩니다.</p>
+            <div class="result-actions">
+              <button id="showResultBtn" class="secondary-btn" type="button">결과 보기</button>
+              <button id="retryBtn" class="primary-btn" type="button">다시 시도</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="game-footer">
+        <p>TIP · 움직이는 파란 블록의 방향을 살피면서 빈 공간으로 피하세요.</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
